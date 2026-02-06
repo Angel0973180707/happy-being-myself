@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>快樂做自己</title>
+
+  <meta name="theme-color" content="#f7f6f2" />
+  <meta name="description" content="快樂做自己：簡潔、溫暖、可離線。用關鍵字整理自己，AI陪你一起看。">
+
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-title">快樂做自己</div>
+      <div class="brand-sub">用關鍵字就好，慢慢看見自己</div>
+    </div>
+
+    <button class="pill" id="modeBtn" type="button" aria-label="模式">
+      <span class="dot" aria-hidden="true"></span>
+      <span id="modeLabel">留給自己</span>
+    </button>
+  </header>
+
+  <main class="shell">
+    <!-- Home -->
+    <section class="card page active" data-page="home">
+      <h1 class="h1">出現一下</h1>
+      <p class="p">
+        不用想清楚、不用寫得好。<br/>
+        你只要把「腦中在轉的東西」放下來。<br/><br/>
+        我們一步一步來。
+      </p>
+      <div class="actions">
+        <button class="btn primary" data-go="s1">開始</button>
+        <button class="btn ghost" id="goLibrary" type="button">素材庫</button>
+      </div>
+    </section>
+
+    <!-- Step 1 -->
+    <section class="card page" data-page="s1">
+      <div class="head-row">
+        <h2 class="h2">1｜我最近在想什麼</h2>
+        <button class="btn tiny ghost" data-go="home">返回</button>
+      </div>
+
+      <p class="p">想到什麼就記下來。關鍵字就好。</p>
+
+      <label class="field">
+        <textarea id="t1" rows="6" placeholder="例如：工作、家庭、關係、未來、卡住、想休息…"></textarea>
+      </label>
+
+      <div class="helper-row">
+        <button class="btn ghost" data-ai="t1" data-title="我最近在想什麼">AI陪我一起看看</button>
+        <button class="btn ghost" data-save="t1" data-next="s2">下一步</button>
+      </div>
+
+      <p class="hint">溫暖提醒：不用刻意美化，也不用刻意隱藏。這裡是你的私密空間。</p>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="card page" data-page="s2">
+      <div class="head-row">
+        <h2 class="h2">2｜我被什麼事困擾或疑惑</h2>
+        <button class="btn tiny ghost" data-go="s1">上一頁</button>
+      </div>
+
+      <p class="p">不一定是困擾，也可能只是「一直放不下」。</p>
+
+      <label class="field">
+        <textarea id="t2" rows="7" placeholder="例如：為什麼我會這樣？為什麼這件事影響我？我到底在怕什麼？"></textarea>
+      </label>
+
+      <div class="helper-row">
+        <button class="btn ghost" data-ai="t2" data-title="我被什麼事困擾或疑惑">AI陪我一起看看</button>
+        <button class="btn ghost" data-save="t2" data-next="s3">下一步</button>
+      </div>
+
+      <p class="hint">不用急著找答案。先把問題放好，就已經在前進了。</p>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="card page" data-page="s3">
+      <div class="head-row">
+        <h2 class="h2">3｜我其實很在意的是</h2>
+        <button class="btn tiny ghost" data-go="s2">上一頁</button>
+      </div>
+
+      <p class="p">如果慢一點看，這份在意背後，可能藏著你珍惜的東西。</p>
+
+      <label class="field">
+        <textarea id="t3" rows="7" placeholder="例如：穩定、自在、被理解、有價值、餘裕、自由…"></textarea>
+      </label>
+
+      <div class="helper-row">
+        <button class="btn ghost" data-ai="t3" data-title="我其實很在意的是">AI陪我一起看看</button>
+        <button class="btn ghost" data-save="t3" data-next="s4">下一步</button>
+      </div>
+
+      <p class="hint">你在意什麼，往往就是你要站穩的地方。</p>
+    </section>
+
+    <!-- Step 4 -->
+    <section class="card page" data-page="s4">
+      <div class="head-row">
+        <h2 class="h2">4｜我已經具備的</h2>
+        <button class="btn tiny ghost" data-go="s3">上一頁</button>
+      </div>
+
+      <p class="p">再小也算。活到現在，你一定已經做到了很多。</p>
+
+      <label class="field">
+        <textarea id="t4" rows="7" placeholder="例如：我願意照顧人、我很會撐、我在學習、我有同理…"></textarea>
+      </label>
+
+      <div class="helper-row">
+        <button class="btn ghost" data-ai="t4" data-title="我已經具備的">AI陪我一起看看</button>
+        <button class="btn ghost" data-save="t4" data-next="done">完成</button>
+      </div>
+
+      <p class="hint">這一步會自然長出「我能感」。不用用力。</p>
+    </section>
+
+    <!-- Done -->
+    <section class="card page" data-page="done">
+      <h2 class="h2">完成這一段</h2>
+      <p class="p big">
+        你沒有被要求變成誰。<br/>
+        你只是替自己，留了一個位置。
+      </p>
+
+      <div class="actions">
+        <button class="btn ghost" id="reviewBtn" type="button">看我留下的</button>
+        <button class="btn primary" data-go="home">回首頁</button>
+      </div>
+
+      <section class="review" id="reviewPanel" hidden>
+        <div class="divider"></div>
+        <div class="review-head">
+          <div class="review-title">我的內容</div>
+          <button class="btn tiny ghost" id="closeReview" type="button">收起</button>
+        </div>
+
+        <pre class="review-box" id="reviewBox"></pre>
+
+        <div class="helper-row">
+          <button class="btn ghost" id="copyAllBtn" type="button">複製全部</button>
+          <button class="btn ghost" id="downloadBtn" type="button">下載文字檔</button>
+        </div>
+
+        <p class="hint">模式為「留給自己」時，內容只存你的裝置（localStorage）。</p>
+      </section>
+    </section>
+
+    <!-- Library -->
+    <section class="card page" data-page="library">
+      <div class="head-row">
+        <h2 class="h2">素材庫</h2>
+        <button class="btn tiny ghost" data-go="home">返回</button>
+      </div>
+
+      <p class="p">你在每一頁按「AI陪我一起看看」複製出去的內容，都可以貼回來集中存放。</p>
+
+      <label class="field">
+        <textarea id="library" rows="10" placeholder="把你覺得重要的句子、整理後的版本、或靈感片段貼在這裡…"></textarea>
+      </label>
+
+      <div class="helper-row">
+        <button class="btn ghost" data-ai="library" data-title="素材庫整理">AI陪我一起看看</button>
+        <button class="btn ghost" data-save="library" data-next="home">存好返回</button>
+      </div>
+
+      <p class="hint">這裡的目的不是堆資料，是讓你之後「做名片、做介紹」的時候有東西可用。</p>
+    </section>
+  </main>
+
+  <dialog class="modal" id="modeModal">
+    <form method="dialog" class="modal-card">
+      <div class="modal-title">模式</div>
+      <p class="modal-p">不急，不評價，只陪你整理。</p>
+
+      <div class="mode-list">
+        <button class="mode-item" id="pickPrivate" type="button">
+          <div class="mode-name">留給自己</div>
+          <div class="mode-desc">內容只存你的裝置</div>
+        </button>
+
+        <button class="mode-item" id="pickShare" type="button">
+          <div class="mode-name">願意分享</div>
+          <div class="mode-desc">仍不會自動對外，只是方便複製/下載</div>
+        </button>
+      </div>
+
+      <div class="actions split">
+        <button class="btn ghost" value="cancel">先不用</button>
+        <button class="btn primary" id="confirmModeBtn" value="default">確定</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="./app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
+    }
+  </script>
+</body>
+                                                 </html>
